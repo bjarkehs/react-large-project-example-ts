@@ -15,7 +15,12 @@
     "noImplicitAny": true,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
-    "noUnusedLocals": true
+    "noUnusedLocals": true,
+    "baseUrl": "src",
+    "paths": {
+      "data/*": [ "data/*" ],
+      "scenes/*": [ "scenes/*" ]
+    }
   },
   "exclude": [
     "node_modules",
