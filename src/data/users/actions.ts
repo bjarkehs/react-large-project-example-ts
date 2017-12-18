@@ -18,11 +18,6 @@ interface Data {
 }
 
 export const getUsers = () => (dispatch: Dispatch<Actions>) => {
-  dispatch({
-    type: 'hokuspokus',
-    payload: 'test'
-  });
-
   api.getUsers().then((data: Data) => {
     dispatch({
       type: GET_ALL,
