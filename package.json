@@ -26,7 +26,9 @@
     "@types/react-dom": "^16.0.3",
     "@types/react-redux": "^5.0.14",
     "@types/react-router-dom": "^4.2.3",
+    "@types/redux-logger": "^3.0.5",
     "enzyme": "^3.2.0",
-    "enzyme-adapter-react-16": "^1.1.0"
+    "enzyme-adapter-react-16": "^1.1.0",
+    "redux-logger": "^3.0.6"
   }
 }
