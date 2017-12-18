@@ -1,15 +1,16 @@
 import * as React from 'react';
 import { User } from 'data/users/model';
 import { connect } from 'react-redux';
-import { getUsers } from 'data/users/actions';
+import { getUsers, Actions } from 'data/users/actions';
 import UserList from './components/UserList';
+import { Dispatch } from 'redux';
 
 interface StateProps {
   users: User[];
 }
 
 interface DispatchProps {
-  getUsers: any;
+  getUsers: () => void;
 }
 
 class UserListContainer extends React.Component<
@@ -29,7 +30,7 @@ const mapStateToProps = ({ data: { users } }: { data: { users: User[] } }) => ({
   users
 });
 
-const mapDispatchToProps = (dispatch: any) => ({
+const mapDispatchToProps = (dispatch: Dispatch<Actions>) => ({
   getUsers: () => dispatch(getUsers())
 });
 
