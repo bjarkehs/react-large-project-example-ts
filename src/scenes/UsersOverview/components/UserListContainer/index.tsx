@@ -17,7 +17,7 @@ interface DispatchProps {
 class UserListContainer extends React.Component<
   StateProps & DispatchProps,
   {}
-  > {
+> {
   componentDidMount() {
     this.props.getUsers();
   }
@@ -27,7 +27,11 @@ class UserListContainer extends React.Component<
   }
 }
 
-const mapStateToProps = ({ data: { users } }: { data: { users: UserState } }) => ({
+const mapStateToProps = ({
+  data: { users }
+}: {
+  data: { users: UserState };
+}) => ({
   users: getAllUsers(users)
 });
 

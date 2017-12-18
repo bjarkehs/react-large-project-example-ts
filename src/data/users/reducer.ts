@@ -13,7 +13,7 @@ const usersById = (state = {}, action: Actions) => {
   switch (action.type) {
     case GET_ALL_SUCCESS:
       const newState = {};
-      action.payload.forEach((user) => {
+      action.payload.forEach(user => {
         newState[user.id] = user;
       });
       return newState;
@@ -38,7 +38,6 @@ export const reducer = combineReducers<State>({
 
 const byIdSelector = (state: State) => state.byId;
 
-export const getAllUsers = createSelector(
-  byIdSelector, 
-  ids => Object.keys(ids).map(key => ids[key])
+export const getAllUsers = createSelector(byIdSelector, ids =>
+  Object.keys(ids).map(key => ids[key])
 );

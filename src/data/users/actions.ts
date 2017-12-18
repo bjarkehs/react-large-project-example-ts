@@ -11,17 +11,17 @@ export const GET_ALL_FAILURE = 'data/users/getAllFailure';
 export type GET_ALL_FAILURE = typeof GET_ALL_FAILURE;
 
 export type Actions =
-  {
-    type: GET_ALL_REQUEST;
-  } |
-  {
-    type: GET_ALL_SUCCESS;
-    payload: User[];
-  } |
-  {
-    type: GET_ALL_FAILURE;
-    error: {};
-  };
+  | {
+      type: GET_ALL_REQUEST;
+    }
+  | {
+      type: GET_ALL_SUCCESS;
+      payload: User[];
+    }
+  | {
+      type: GET_ALL_FAILURE;
+      error: {};
+    };
 
 export const getUsers = () => (dispatch: Dispatch<Actions>) => {
   dispatch<Actions>({
