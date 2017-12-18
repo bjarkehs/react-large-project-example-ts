@@ -5,7 +5,6 @@ interface Person {
 }
 
 class UserList extends React.Component {
-
   usersData: Person[] = [
     { name: 'Jakob' },
     { name: 'Bjarke' }
