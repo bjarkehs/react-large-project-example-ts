@@ -8,7 +8,7 @@ export const getUsers = () => {
   const userData = new Promise<Data>((resolve, reject) => {
     setTimeout(() => {
       resolve({
-        users: [{ name: 'Jakob' }, { name: 'Bjarke' }]
+        users: [{ id: '1', name: 'Jakob' }, { id: '2', name: 'Bjarke' }]
       });
     }, 250);
   });
