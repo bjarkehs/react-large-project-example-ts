@@ -41,3 +41,5 @@ const byIdSelector = (state: State) => state.byId;
 export const getAllUsers = createSelector(byIdSelector, ids =>
   Object.keys(ids).map(key => ids[key])
 );
+
+export const getUser = (state: State, id: string): User | undefined => byIdSelector(state)[id];
