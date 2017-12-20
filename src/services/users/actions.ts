@@ -33,5 +33,10 @@ export const getUsers = () => (dispatch: Dispatch<Actions>) => {
       type: GET_ALL_SUCCESS,
       payload: data.users
     });
+  }).catch(error => {
+    dispatch<Actions>({
+      type: GET_ALL_FAILURE,
+      error
+    })
   });
 };
