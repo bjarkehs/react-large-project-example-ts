@@ -18,7 +18,7 @@
     "noUnusedLocals": true,
     "baseUrl": "src",
     "paths": {
-      "data/*": [ "data/*" ],
+      "services/*": [ "services/*" ],
       "scenes/*": [ "scenes/*" ]
     }
   },

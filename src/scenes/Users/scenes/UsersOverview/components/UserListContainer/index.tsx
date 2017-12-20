@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { User } from 'data/users/model';
+import { User } from 'services/users/model';
 import { connect } from 'react-redux';
-import { getAllUsers, State as UserState } from 'data/users/reducer';
+import { getAllUsers, State as UserState } from 'services/users/reducer';
 
 import UserList from './components/UserList';
 import MatTest from '../MatTest';

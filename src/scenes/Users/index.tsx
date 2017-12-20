@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { connect, DispatchProp } from 'react-redux';
 import { Route, RouteComponentProps, Switch } from 'react-router';
-import { getUsers } from 'data/users/actions';
+import { getUsers } from 'services/users/actions';
 
 import UsersOverview from './scenes/UsersOverview';
 import UserDetails from './scenes/UserDetails';

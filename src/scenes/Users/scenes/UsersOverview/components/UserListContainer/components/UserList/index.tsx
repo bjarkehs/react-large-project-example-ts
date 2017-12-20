@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { User } from 'data/users/model';
+import { User } from 'services/users/model';
 import { Link } from 'react-router-dom';
 
 interface UserListProps {

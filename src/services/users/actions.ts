@@ -3,11 +3,11 @@ import { Dispatch } from 'react-redux';
 
 import { User } from './model';
 
-export const GET_ALL_REQUEST = 'data/users/getAllRequest';
+export const GET_ALL_REQUEST = 'services/users/getAllRequest';
 export type GET_ALL_REQUEST = typeof GET_ALL_REQUEST;
-export const GET_ALL_SUCCESS = 'data/users/getAllSuccess';
+export const GET_ALL_SUCCESS = 'services/users/getAllSuccess';
 export type GET_ALL_SUCCESS = typeof GET_ALL_SUCCESS;
-export const GET_ALL_FAILURE = 'data/users/getAllFailure';
+export const GET_ALL_FAILURE = 'services/users/getAllFailure';
 export type GET_ALL_FAILURE = typeof GET_ALL_FAILURE;
 
 export type Actions =
