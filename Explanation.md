@@ -89,3 +89,8 @@ Note: Currently there's a warning with React 16
 console.error node_modules\fbjs\lib\warning.js:33
       Warning: React depends on requestAnimationFrame. Make sure that you load a polyfill in older browsers. http://fb.me/react-polyfills
 ```
+
+# Source
+
+https://medium.com/@alexmngn/how-to-better-organize-your-react-applications-2fd3ea1920f1
+https://medium.com/@alexmngn/how-to-use-redux-on-highly-scalable-javascript-applications-4e4b8cb5ef38
