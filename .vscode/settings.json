@@ -3,6 +3,5 @@
   "editor.insertSpaces": true,
   "editor.renderWhitespace": "all",
   "editor.detectIndentation": false,
-  "editor.formatOnSave": true,
   "jest.pathToJest": "npm.cmd run test --"
 }
