@@ -10,7 +10,7 @@ export const getUsers = () => {
       resolve({
         users: [{ id: '1', name: 'Jakob' }, { id: '2', name: 'Bjarke' }]
       });
-    }, 250);
+    }, 250); // tslint:disable-line:align
   });
 
   return userData;
