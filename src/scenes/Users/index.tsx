@@ -30,4 +30,5 @@ class Users extends React.Component<Props> {
   }
 }
 
+export const UsersWithoutHOC = Users;
 export default connect()(Users);

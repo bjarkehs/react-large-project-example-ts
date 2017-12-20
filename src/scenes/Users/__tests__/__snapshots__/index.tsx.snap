@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`(Scene) Users renders without crashing 1`] = `
+<React.Fragment>
+  <h2>
+    User overview
+  </h2>
+  <Switch>
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/"
+    />
+    <Route
+      component={[Function]}
+      path="//:id"
+    />
+  </Switch>
+</React.Fragment>
+`;

@@ -31,8 +31,15 @@
     "@types/redux-logger": "^3.0.5",
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.0",
+    "enzyme-to-json": "^3.3.0",
     "prettier": "^1.9.2",
+    "react-router-test-context": "^0.1.0",
     "redux-logger": "^3.0.6",
     "tslint-config-prettier": "^1.6.0"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   }
 }

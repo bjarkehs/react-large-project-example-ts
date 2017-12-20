@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`(Component) NavigationBar renders without crashing 1`] = `
+<withStyles(AppBar)
+  position="static"
+>
+  <withStyles(Toolbar)>
+    <withStyles(Typography)
+      className="NavigationBar-flex-2"
+      color="inherit"
+      type="title"
+    >
+      Title
+    </withStyles(Typography)>
+    <withStyles(Menu)>
+      <withStyles(MenuItem)>
+        Users
+      </withStyles(MenuItem)>
+    </withStyles(Menu)>
+  </withStyles(Toolbar)>
+</withStyles(AppBar)>
+`;
