@@ -1,7 +1,7 @@
 import * as api from './api';
 import { Dispatch } from 'react-redux';
 
-import { User } from './model';
+import { User } from './models';
 
 export const GET_ALL_REQUEST = 'services/users/getAllRequest';
 export type GET_ALL_REQUEST = typeof GET_ALL_REQUEST;
@@ -28,15 +28,18 @@ export const getUsers = () => (dispatch: Dispatch<Actions>) => {
     type: GET_ALL_REQUEST
   });
 
-  api.getUsers().then(data => {
-    dispatch<Actions>({
-      type: GET_ALL_SUCCESS,
-      payload: data.users
-    });
-  }).catch(error => {
-    dispatch<Actions>({
-      type: GET_ALL_FAILURE,
-      error
+  api
+    .getUsers()
+    .then(data => {
+      dispatch<Actions>({
+        type: GET_ALL_SUCCESS,
+        payload: data.users
+      });
     })
-  });
+    .catch(error => {
+      dispatch<Actions>({
+        type: GET_ALL_FAILURE,
+        error
+      });
+    });
 };

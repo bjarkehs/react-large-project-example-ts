@@ -1,15 +1,21 @@
-import { combineReducers } from 'redux';
+import { combineReducers, Reducer } from 'redux';
 import { createSelector } from 'reselect';
 
 import { Actions, GET_ALL_SUCCESS } from './actions';
-import { User } from './model';
+import { User } from './models';
 
-export interface State {
-  byId: { [index: string]: User };
-  allIds: string[];
+interface ByIdState {
+  [index: string]: User;
 }
 
-const usersById = (state = {}, action: Actions) => {
+type AllIdsState = string[];
+
+export interface State {
+  byId: ByIdState;
+  allIds: AllIdsState;
+}
+
+const usersById: Reducer<ByIdState> = (state = {}, action: Actions) => {
   switch (action.type) {
     case GET_ALL_SUCCESS:
       const newState = {};
@@ -22,7 +28,7 @@ const usersById = (state = {}, action: Actions) => {
   }
 };
 
-const allUsers = (state: User[] = [], action: Actions) => {
+const allUsers: Reducer<AllIdsState> = (state = [], action: Actions) => {
   switch (action.type) {
     case GET_ALL_SUCCESS:
       return [...action.payload.map(user => user.id)];

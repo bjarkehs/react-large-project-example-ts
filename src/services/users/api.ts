@@ -1,4 +1,4 @@
-import { User } from './model';
+import { User } from './models';
 
 interface Data {
   users: User[];

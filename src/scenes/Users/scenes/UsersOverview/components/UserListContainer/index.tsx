@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { User } from 'services/users/model';
+import { User } from 'services/users/models';
 import { connect } from 'react-redux';
 import { getAllUsers, State as UserState } from 'services/users/reducer';
 
