@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { getAllUsers, State as UserState } from 'services/users/reducer';
 
 import UserList from './components/UserList';
-import MatTest from '../MatTest';
 
 interface Props {
   // Own props
@@ -18,7 +17,6 @@ class UserListContainer extends React.Component<Props, {}> {
     return (
       <div>
         <UserList users={this.props.users} />
-        <MatTest displayText={'Bøh'} />
       </div>
     );
   }
