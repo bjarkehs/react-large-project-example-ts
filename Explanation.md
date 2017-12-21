@@ -9,19 +9,24 @@
       /components
         /ButtonDismiss
           /__tests__
-          /index.tsx
-          /styles.scss
-      /index.tsx
-      /styles.scss
+          /ButtonDismiss.tsx
+          /index.ts
+          /ButtonDismiss.scss
+      /Notifications.tsx
+      /index.ts
+      /Notifications.scss
   /scenes
     /Home
       /__tests__
       /components
         /ButtonLike
+          /ButtonLike.tsx
+          /index.ts
       /services
         /processData
-      /index.tsx
-      /styles.scss
+      /Home.tsx
+      /index.ts
+      /Home.scss
     /Sign
       /__tests__
       /components
@@ -30,18 +35,23 @@
         /Login
         /Register
           /__tests__
-          /index.tsx
-          /styles.scss
+          /Register.tsx
+          /index.ts
+          /Register.scss
   /services
     /users
       /actions.ts
       /api.ts
       /models.ts
       /reducer.ts
+    /auth
+      /actions.ts
+      /api.ts
+      /reducer.ts
     /localStorage (example)
-  App.tsx
-  index.tsx
-  store.ts
+  /App.tsx
+  /index.tsx
+  /store.ts
 ```
 
 ## Rules
