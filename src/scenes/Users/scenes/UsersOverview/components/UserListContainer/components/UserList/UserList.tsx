@@ -8,14 +8,14 @@ interface UserListProps {
 
 const UserList = ({ users = [] }: UserListProps) => {
   return (
-    <React.Fragment>
+    <>
       <h3>User list</h3>
       {users.map((user: User) => (
         <div key={user.name}>
           <Link to={'/users/' + user.id}>{user.name}</Link>
         </div>
       ))}
-    </React.Fragment>
+    </>
   );
 };
 
