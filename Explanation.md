@@ -16,6 +16,19 @@
       /index.ts
       /Notifications.scss
   /scenes
+    /Users
+      /scenes
+        /UserOverview
+          /components
+            /UserListContainer
+              /components
+                /UserList
+                  /index.ts
+                  /UserList.tsx
+              /index.ts
+              /UserListContainer.tsx
+          /index.ts
+          /UsersOverview
     /Home
       /__tests__
       /components
@@ -86,6 +99,11 @@
 - Self-contained module
 - E.g. core business logic
 - Api requests should happen through a service
+
+## Redux
+- To be able to better write acceptance tests, components that needs to show data should recieve it through it's properties. A container component shoud encapsulate the component. The role of this component will be to have a connection to the redux store.
+
+An example could be the *UserOverview* scene under the *Users* scene. The overview contains a userlist. The userlist itself is a stateless component that takes a few properties that is being passed to it, throught the *UserListContainer* component.
 
 ## Tests
 
