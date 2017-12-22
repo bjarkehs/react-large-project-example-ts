@@ -9,7 +9,7 @@ import './App.css';
 class App extends React.Component {
   render() {
     return (
-      <React.Fragment>
+      <>
         <NavigationBar />
         <h1>Welcome to React</h1>
 
@@ -23,7 +23,7 @@ class App extends React.Component {
             )}
           />
         </Switch>
-      </React.Fragment>
+      </>
     );
   }
 }
