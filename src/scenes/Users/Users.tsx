@@ -19,13 +19,13 @@ class Users extends React.Component<Props> {
     const { match } = this.props;
 
     return (
-      <React.Fragment>
+      <>
         <h2>User overview</h2>
         <Switch>
           <Route exact={true} path={match.url} component={UsersOverview} />
           <Route path={match.url + '/:id'} component={UserDetails} />
         </Switch>
-      </React.Fragment>
+      </>
     );
   }
 }

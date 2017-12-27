@@ -9,19 +9,37 @@
       /components
         /ButtonDismiss
           /__tests__
-          /index.tsx
-          /styles.scss
-      /index.tsx
-      /styles.scss
+          /ButtonDismiss.tsx
+          /index.ts
+          /ButtonDismiss.scss
+      /Notifications.tsx
+      /index.ts
+      /Notifications.scss
   /scenes
+    /Users
+      /scenes
+        /UserOverview
+          /components
+            /UserListContainer
+              /components
+                /UserList
+                  /index.ts
+                  /UserList.tsx
+              /index.ts
+              /UserListContainer.tsx
+          /index.ts
+          /UsersOverview
     /Home
       /__tests__
       /components
         /ButtonLike
+          /ButtonLike.tsx
+          /index.ts
       /services
         /processData
-      /index.tsx
-      /styles.scss
+      /Home.tsx
+      /index.ts
+      /Home.scss
     /Sign
       /__tests__
       /components
@@ -30,18 +48,23 @@
         /Login
         /Register
           /__tests__
-          /index.tsx
-          /styles.scss
+          /Register.tsx
+          /index.ts
+          /Register.scss
   /services
     /users
       /actions.ts
       /api.ts
       /models.ts
       /reducer.ts
+    /auth
+      /actions.ts
+      /api.ts
+      /reducer.ts
     /localStorage (example)
-  App.tsx
-  index.tsx
-  store.ts
+  /App.tsx
+  /index.tsx
+  /store.ts
 ```
 
 ## Rules
@@ -76,6 +99,11 @@
 - Self-contained module
 - E.g. core business logic
 - Api requests should happen through a service
+
+## Redux
+- To be able to better write acceptance tests, components that needs to show data should recieve it through it's properties. A container component shoud encapsulate the component. The role of this component will be to have a connection to the redux store.
+
+An example could be the *UserOverview* scene under the *Users* scene. The overview contains a userlist. The userlist itself is a stateless component that takes a few properties that is being passed to it, throught the *UserListContainer* component.
 
 ## Tests
 

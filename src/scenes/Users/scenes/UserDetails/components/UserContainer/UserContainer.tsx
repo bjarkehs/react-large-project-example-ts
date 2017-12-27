@@ -23,7 +23,7 @@ interface State {
 const UserContainer = (props: Props) => (
   <div>
     <div>
-      <Link to="/users">Tilbage</Link>
+      <Link to="/users">Back to user list</Link>
     </div>
 
     {props.user && <span>{props.user.name}</span>}

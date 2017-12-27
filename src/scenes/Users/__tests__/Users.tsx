@@ -4,7 +4,7 @@ import createRouterContext from 'react-router-test-context';
 
 import { shallow } from 'enzyme';
 
-import { UsersWithoutHOC } from '../index';
+import { UsersWithoutHOC } from '../Users';
 
 describe('(Scene) Users', () => {
   it('renders without crashing', () => {
