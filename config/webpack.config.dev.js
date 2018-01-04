@@ -113,7 +113,7 @@ module.exports = {
     rules: [
       // TODO: Disable require.ensure as it's not a standard language feature.
       // We are waiting for https://github.com/facebookincubator/create-react-app/issues/2176.
-      // { parser: { requireEnsure: false } },
+      { parser: { requireEnsure: false } },
 
       // First, run the linter.
       // It's important to do this before Babel processes the JS.
@@ -141,9 +141,14 @@ module.exports = {
             test: /\.(jpe?g|png|gif|svg)$/i,
             use: [
               {
+                loader: require.resolve('url-loader'),
+                options: {
+                  limit: 10000,
+                  name: 'static/media/[name].[hash:8].[ext]'
+                }
+              },
+              {
                 loader: 'img-loader',
-                limit: 10000,
-                name: 'static/media/[name].[hash:8].[ext]',
                 options: {
                   enabled: process.env.NODE_ENV === 'production',
                   gifsicle: {
@@ -159,10 +164,7 @@ module.exports = {
                     speed: 2
                   },
                   svgo: {
-                    plugins: [
-                      { removeTitle: true },
-                      { convertPathData: false }
-                    ]
+                    plugins: [{ removeTitle: true }, { convertPathData: false }]
                   }
                 }
               }
@@ -209,11 +211,26 @@ module.exports = {
           {
             test: /\.scss$/,
             use: [
+              require.resolve('style-loader'),
               {
-                loader: 'style-loader' // creates style nodes from JS strings
+                loader: require.resolve('css-loader'),
+                options: {
+                  importLoaders: 1
+                }
               },
               {
-                loader: 'css-loader' // translates CSS into CommonJS
+                loader: require.resolve('postcss-loader'),
+                options: {
+                  // Necessary for external CSS imports to work
+                  // https://github.com/facebookincubator/create-react-app/issues/2677
+                  ident: 'postcss',
+                  plugins: () => [
+                    require('postcss-flexbugs-fixes'),
+                    autoprefixer({
+                      browsers: ['last 2 Chrome versions']
+                    })
+                  ]
+                }
               },
               {
                 loader: 'fast-sass-loader',
