@@ -14,8 +14,6 @@
     "html-webpack-plugin": "2.29.0",
     "jest": "20.0.4",
     "material-ui": "^1.0.0-beta.24",
-    "node-sass-chokidar": "^0.0.3",
-    "npm-run-all": "^4.1.2",
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.6",
@@ -44,12 +42,8 @@
     "whatwg-fetch": "2.0.3"
   },
   "scripts": {
-    "build-css": "node-sass-chokidar src/ -o src/",
-    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
-    "start-js": "node scripts/start.js",
-    "start": "npm-run-all -p watch-css start-js",
-    "build-js": "node scripts/build.js",
-    "build": "npm-run-all build-css build-js",
+    "start": "node scripts/start.js",
+    "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
   },
   "devDependencies": {
@@ -67,7 +61,9 @@
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.0",
     "enzyme-to-json": "^3.3.0",
+    "fast-sass-loader": "^1.4.0",
     "fetch-mock": "^5.13.1",
+    "img-loader": "^2.0.0",
     "node-sass": "^4.7.2",
     "prettier": "^1.9.2",
     "react-router-test-context": "^0.1.0",

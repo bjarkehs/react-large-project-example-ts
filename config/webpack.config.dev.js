@@ -130,6 +130,36 @@ module.exports = {
         include: paths.appSrc
       },
       {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        use: [
+          {
+            loader: 'img-loader',
+            options: {
+              enabled: process.env.NODE_ENV === 'production',
+              gifsicle: {
+                interlaced: false
+              },
+              mozjpeg: {
+                progressive: true,
+                arithmetic: false
+              },
+              optipng: true, // disabled
+              pngquant: {
+                floyd: 0.5,
+                speed: 2
+              },
+              svgo: {
+                plugins: [
+                  { removeTitle: true },
+                  { convertPathData: false }
+                ]
+              }
+            }
+          }
+        ]
+      },
+
+      {
         // "oneOf" will traverse all following loaders until one will
         // match the requirements. When no loader matches it will fall
         // back to the "file" loader at the end of the loader list.
@@ -192,12 +222,9 @@ module.exports = {
                 loader: 'css-loader' // translates CSS into CommonJS
               },
               {
-                loader: 'sass-loader', // compiles Sass to CSS
+                loader: 'fast-sass-loader',
                 options: {
                   data: `
-                    @import '~${path
-                      .resolve('src/assets/styles/main.scss')
-                      .replace(/\\/g, '/')}';
                     @import '~${path
                       .resolve('src/assets/styles/settings.scss')
                       .replace(/\\/g, '/')}';
@@ -206,6 +233,7 @@ module.exports = {
               }
             ]
           },
+
           // "file" loader makes sure those assets get served by WebpackDevServer.
           // When you `import` an asset, you get its (virtual) filename.
           // In production, they would get copied to the `build` folder.
