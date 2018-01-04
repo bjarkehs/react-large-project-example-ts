@@ -130,36 +130,6 @@ module.exports = {
         include: paths.appSrc
       },
       {
-        test: /\.(jpe?g|png|gif|svg)$/i,
-        use: [
-          {
-            loader: 'img-loader',
-            options: {
-              enabled: process.env.NODE_ENV === 'production',
-              gifsicle: {
-                interlaced: false
-              },
-              mozjpeg: {
-                progressive: true,
-                arithmetic: false
-              },
-              optipng: true, // disabled
-              pngquant: {
-                floyd: 0.5,
-                speed: 2
-              },
-              svgo: {
-                plugins: [
-                  { removeTitle: true },
-                  { convertPathData: false }
-                ]
-              }
-            }
-          }
-        ]
-      },
-
-      {
         // "oneOf" will traverse all following loaders until one will
         // match the requirements. When no loader matches it will fall
         // back to the "file" loader at the end of the loader list.
@@ -168,13 +138,37 @@ module.exports = {
           // smaller than specified limit in bytes as data URLs to avoid requests.
           // A missing `test` is equivalent to a match.
           {
-            test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
-            loader: require.resolve('url-loader'),
-            options: {
-              limit: 10000,
-              name: 'static/media/[name].[hash:8].[ext]'
-            }
+            test: /\.(jpe?g|png|gif|svg)$/i,
+            use: [
+              {
+                loader: 'img-loader',
+                limit: 10000,
+                name: 'static/media/[name].[hash:8].[ext]',
+                options: {
+                  enabled: process.env.NODE_ENV === 'production',
+                  gifsicle: {
+                    interlaced: false
+                  },
+                  mozjpeg: {
+                    progressive: true,
+                    arithmetic: false
+                  },
+                  optipng: true, // disabled
+                  pngquant: {
+                    floyd: 0.5,
+                    speed: 2
+                  },
+                  svgo: {
+                    plugins: [
+                      { removeTitle: true },
+                      { convertPathData: false }
+                    ]
+                  }
+                }
+              }
+            ]
           },
+
           // Compile .tsx?
           {
             test: /\.(ts|tsx)$/,
