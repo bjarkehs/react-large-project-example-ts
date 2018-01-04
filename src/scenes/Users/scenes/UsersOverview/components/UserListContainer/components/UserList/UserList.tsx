@@ -2,7 +2,7 @@ import * as React from 'react';
 import { User } from 'services/users/models';
 import { Link } from 'react-router-dom';
 
-import './UserList.css';
+import './UserList.scss';
 
 interface UserListProps {
   users?: User[];

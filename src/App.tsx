@@ -4,7 +4,7 @@ import { Link, Route, Switch } from 'react-router-dom';
 import Users from './scenes/Users';
 import NavigationBar from './components/NavigationBar';
 
-import './App.css';
+import './App.scss';
 
 class App extends React.Component {
   render() {
