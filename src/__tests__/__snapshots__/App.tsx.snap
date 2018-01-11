@@ -6,6 +6,7 @@ exports[`App renders without crashing 1`] = `
   <h1>
     Welcome to React
   </h1>
+  <img />
   <Switch>
     <Route
       component={[Function]}
