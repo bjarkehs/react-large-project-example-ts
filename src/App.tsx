@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
 
-import Users from './scenes/Users';
-import NavigationBar from './components/NavigationBar';
+import Button from 'material-ui/Button';
 
-import logo from './assets/graphics/tmp.png';
+import Users from './scenes/Users';
+import Overview from 'scenes/Overview/Overview';
+import NavigationBar from './components/NavigationBar';
 
 import './App.scss';
 
@@ -13,15 +14,18 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <NavigationBar />
-        <h1>Welcome to React</h1>
-        <img src={logo} />
-
         <Switch>
           <Route path="/users" component={Users} />
+          <Route path="/overview" component={Overview} />
           <Route
             render={() => (
               <div>
-                <Link to="/users">Users</Link>
+                <Link to="/overview">
+                  <Button>Overview</Button>
+                </Link>
+                <Link to="/users">
+                  <Button>Users</Button>
+                </Link>
               </div>
             )}
           />
