@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { connect, DispatchProp } from 'react-redux';
-import { State as UserState, getUser } from 'services/users/reducer';
-import { User } from 'services/users/models';
+import { State as UserState, getUser } from '@services/users/reducer';
+import { User } from '@services/users/models';
 import { Link } from 'react-router-dom';
 
 interface OwnProps {

@@ -4,7 +4,7 @@ import { Link, Route, Switch } from 'react-router-dom';
 import Button from 'material-ui/Button';
 
 import Users from './scenes/Users';
-import Overview from 'scenes/Overview/Overview';
+import Overview from '@scenes/Overview';
 import NavigationBar from './components/NavigationBar';
 
 import './App.scss';

@@ -25,6 +25,11 @@ function ensureSlash(path, needsSlash) {
 const getPublicUrl = appPackageJson =>
   envPublicUrl || require(appPackageJson).homepage;
 
+const aliases = {
+  '@services': resolveApp('src/services'),
+  '@scenes': resolveApp('src/scenes')
+};
+
 // We use `PUBLIC_URL` environment variable or "homepage" field to infer
 // "public path" at which the app is served.
 // Webpack needs to know it to put the right <script> hrefs into HTML even in
@@ -53,4 +58,5 @@ module.exports = {
   appTsConfig: resolveApp('tsconfig.json'),
   publicUrl: getPublicUrl(resolveApp('package.json')),
   servedPath: getServedPath(resolveApp('package.json')),
+  aliases: aliases
 };
