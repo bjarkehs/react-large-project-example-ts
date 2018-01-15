@@ -18,8 +18,8 @@
     "noUnusedLocals": true,
     "baseUrl": "src",
     "paths": {
-      "services/*": [ "services/*" ],
-      "scenes/*": [ "scenes/*" ]
+      "@services/*": [ "services/*" ],
+      "@scenes/*": [ "scenes/*" ]
     }
   },
   "exclude": [
